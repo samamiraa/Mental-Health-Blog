@@ -1,4 +1,6 @@
 body {
     font-family: "Abel", sans-serif;
     background-color: #F2E2BA;
+    height: 100vh;
+    margin: 0;
 }
