@@ -20,53 +20,50 @@ export default function Header() {
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static" sx={{ backgroundColor: '#F2BAC9' }}>
                     <Toolbar>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }} align='center'>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
                             Miss Mental Matters
                         </Typography>
+                        <Breadcrumbs aria-label="breadcrumb" sx={{ color: 'white' }} onClick={handleClick} >
+                            <Link
+                                underline="hover"
+                                sx={{ display: 'flex', alignItems: 'center' }}
+                                color="inherit"
+                                href="/"
+                            >
+                                <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                                Home
+                            </Link>
+                            <Link
+                                underline="hover"
+                                sx={{ display: 'flex', alignItems: 'center' }}
+                                color="inherit"
+                                href=""
+                            >
+                                <FaceIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                                About
+                            </Link>
+                            <Link
+                                underline="hover"
+                                sx={{ display: 'flex', alignItems: 'center' }}
+                                color="inherit"
+                                href=""
+                            >
+                                <ContactMailIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                                Contact
+                            </Link>
+                            <Link
+                                underline="hover"
+                                sx={{ display: 'flex', alignItems: 'center' }}
+                                color="inherit"
+                                href=""
+                            >
+                                <InstagramIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                                Instagram
+                            </Link>
+                        </Breadcrumbs>
                     </Toolbar>
                 </AppBar>
             </Box>
-
-            <div role="presentation" onClick={handleClick} >
-                <Breadcrumbs aria-label="breadcrumb" sx={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', color: 'darkgrey' }}>
-                    <Link
-                        underline="hover"
-                        sx={{ display: 'flex', alignItems: 'center' }}
-                        color="inherit"
-                        href="/"
-                    >
-                        <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                        Home
-                    </Link>
-                    <Link
-                        underline="hover"
-                        sx={{ display: 'flex', alignItems: 'center' }}
-                        color="inherit"
-                        href=""
-                    >
-                        <FaceIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                        About
-                    </Link>
-                    <Link
-                        underline="hover"
-                        sx={{ display: 'flex', alignItems: 'center' }}
-                        color="inherit"
-                        href=""
-                    >
-                        <ContactMailIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                        Contact
-                    </Link>
-                    <Link
-                        underline="hover"
-                        sx={{ display: 'flex', alignItems: 'center' }}
-                        color="inherit"
-                        href=""
-                    >
-                        <InstagramIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                        Instagram
-                    </Link>
-                </Breadcrumbs>
-            </div>
         </div>
     );
 }
