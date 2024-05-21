@@ -18,16 +18,16 @@ export default function Header() {
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={{ backgroundColor: '#F2BAC9' }}>
+                <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
                     <Toolbar>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'white' }}>
+                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'darkgreen', fontWeight: 'bolder' }}>
                             Miss Mental Matters
                         </Typography>
                         <Breadcrumbs aria-label="breadcrumb" sx={{ color: 'white' }} onClick={handleClick} >
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="inherit"
+                                color="darkgreen"
                                 href="/"
                             >
                                 <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
@@ -36,7 +36,7 @@ export default function Header() {
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="inherit"
+                                color="darkgreen"
                                 href=""
                             >
                                 <FaceIcon sx={{ mr: 0.5 }} fontSize="inherit" />
@@ -45,7 +45,7 @@ export default function Header() {
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="inherit"
+                                color="darkgreen"
                                 href=""
                             >
                                 <ContactMailIcon sx={{ mr: 0.5 }} fontSize="inherit" />
@@ -54,7 +54,7 @@ export default function Header() {
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="inherit"
+                                color="darkgreen"
                                 href=""
                             >
                                 <InstagramIcon sx={{ mr: 0.5 }} fontSize="inherit" />

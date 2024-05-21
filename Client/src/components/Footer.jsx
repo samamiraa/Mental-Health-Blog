@@ -6,7 +6,7 @@ import Link from '@mui/material/Link';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="white" align="center">
+    <Typography variant="body2" color="darkgreen" align="center">
       {'Copyright © '}
       <Link color="inherit" href="">
         Miss Mental Matters
@@ -21,7 +21,7 @@ function Footer(props) {
   const { description, title } = props;
 
   return (
-    <Box component="footer" sx={{ bgcolor: '#F2BAC9', py: 4 }}>
+    <Box component="footer" sx={{ bgcolor: 'transparent', py: 4 }}>
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
           {title}
