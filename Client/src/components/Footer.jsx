@@ -6,7 +6,7 @@ import Link from '@mui/material/Link';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="darkgreen" align="center">
+    <Typography variant="body2" color="#553E4E" align="center">
       {'Copyright © '}
       <Link color="inherit" href="">
         Miss Mental Matters
