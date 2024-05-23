@@ -6,8 +6,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
-import ContactMailIcon from '@mui/icons-material/ContactMail';
-import FaceIcon from '@mui/icons-material/Face';
+import ContactMailIcon from '@mui/icons-material/ContactMail'; 
+import NewspaperIcon from '@mui/icons-material/Newspaper';
 
 export default function Header() {
     function handleClick(event) {
@@ -18,16 +18,16 @@ export default function Header() {
     return (
         <div>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={{ backgroundColor: 'transparent' }}>
+                <AppBar position="static" sx={{ backgroundColor: '#f3eee8', borderBottom: '1px solid black' }}>
                     <Toolbar>
-                        <Typography variant="h4" component="div" sx={{ flexGrow: 1, color: '#553E4E', fontWeight: 'bolder', fontFamily: 'verdana' }}>
+                        <Typography variant="h5" component="div" sx={{ flexGrow: 1, color: '#eb9aa3', fontWeight: 'bolder' }}>
                             Miss Mental Matters
                         </Typography>
-                        <Breadcrumbs aria-label="breadcrumb" sx={{ color: '#553E4E' }} onClick={handleClick} >
+                        <Breadcrumbs aria-label="breadcrumb" sx={{ color: '#fac04b' }} onClick={handleClick} >
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="#553E4E"
+                                color="#eb9aa3"
                                 href="/"
                             >
                                 <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
@@ -36,16 +36,16 @@ export default function Header() {
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="#553E4E"
+                                color="#eb9aa3"
                                 href=""
                             >
-                                <FaceIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-                                About
+                                <NewspaperIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                                Blog Posts
                             </Link>
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="#553E4E"
+                                color="#eb9aa3"
                                 href=""
                             >
                                 <ContactMailIcon sx={{ mr: 0.5 }} fontSize="inherit" />
@@ -54,7 +54,7 @@ export default function Header() {
                             <Link
                                 underline="hover"
                                 sx={{ display: 'flex', alignItems: 'center' }}
-                                color="#553E4E"
+                                color="#eb9aa3"
                                 href=""
                             >
                                 <InstagramIcon sx={{ mr: 0.5 }} fontSize="inherit" />
