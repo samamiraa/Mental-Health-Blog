@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import LocalFloristIcon from '@mui/icons-material/LocalFlorist';
 import Grid from '@mui/material/Grid';
 import { Button, Paper } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -36,9 +37,11 @@ export default function Home() {
                         </Typography>
 
                         <div style={{ textAlign: 'center' }}>
-                            <Button sx={{ color: '#eb9aa3'  }}>
-                                Resources
-                            </Button>
+                            <Link to='/resources'>
+                                <Button sx={{ color: '#eb9aa3' }}>
+                                    Resources
+                                </Button>
+                            </Link>
                         </div>
                     </Paper>
                 </Grid>
