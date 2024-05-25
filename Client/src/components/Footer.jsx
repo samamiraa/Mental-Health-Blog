@@ -8,7 +8,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="#eb9aa3" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="">
+      <Link color="inherit" href="/login">
         Miss Mental Matters
       </Link>{' '}
       {new Date().getFullYear()}

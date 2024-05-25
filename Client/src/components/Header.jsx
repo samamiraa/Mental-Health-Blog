@@ -14,13 +14,20 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Blog Posts', 'Contact', 'Instagram'];
+const navItems = [
+  { text: 'Home', to: '/' },
+  { text: 'Blog Posts', to: '/blogs' },
+  { text: 'Contact', to: '/contact' },
+  { text: 'Instagram', to: 'https://www.instagram.com/missmentalmatters' },
+];
 
 function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { pathname } = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -34,9 +41,9 @@ function Header(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center', color: '#eb9aa3'  }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton component={Link} to={item.to} sx={{ textAlign: 'center', color: '#eb9aa3'  }} selected={pathname === item.to}>
+              <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -69,8 +76,8 @@ function Header(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block', color: '#eb9aa3'  } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#eb9aa3'  }}>
-                {item}
+              <Button key={item.text} component={Link} to={item.to} variant={pathname === item.to  ? 'outlined' : 'text'} sx={{ color: '#eb9aa3'  }}>
+                {item.text}
               </Button>
             ))}
           </Box>
