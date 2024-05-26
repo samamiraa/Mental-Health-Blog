@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { Link } from 'react-router-dom';
+import resources from '../utils/resources.json';
 
 export default function Resources() {
     return (
@@ -32,110 +33,22 @@ export default function Resources() {
                     </Paper>
                 </Grid>
 
-                <Grid item xs={8} my={3}>
+                {resources.map((resource, index) => (
+                    <Grid key={index} item xs={8} my={3}>
                     <Paper sx={{ padding: '1rem', backgroundColor: '#f3eee8', border: '2px solid black' }}>
                         <Typography variant='h5' textAlign='center' sx={{ color: "#eb9aa3" }}>
-                            National Alliance on Mental Illness
+                            {resource.name}
                         </Typography>
                         <div style={{ textAlign: 'center' }}>
-                            <Link to='https://www.nami.org/'>
+                            <Link to={resource.url}>
                                 <Button sx={{ color: 'black' }}>
-                                    NAMI Website
+                                    {resource.buttonText}
                                 </Button>
                             </Link>
                         </div>
                     </Paper>
                 </Grid>
-
-                <Grid item xs={8} my={3}>
-                    <Paper sx={{ padding: '1rem', backgroundColor: '#f3eee8', border: '2px solid black' }}>
-                        <Typography variant='h5' textAlign='center' sx={{ color: "#eb9aa3" }}>
-                            National Institute of Mental Health
-                        </Typography>
-                        <div style={{ textAlign: 'center' }}>
-                            <Link to='https://www.nimh.nih.gov/'>
-                                <Button sx={{ color: 'black' }}>
-                                    NIMH Website
-                                </Button>
-                            </Link>
-                        </div>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={8} my={3}>
-                    <Paper sx={{ padding: '1rem', backgroundColor: '#f3eee8', border: '2px solid black' }}>
-                        <Typography variant='h5' textAlign='center' sx={{ color: "#eb9aa3" }}>
-                            Psychology Today
-                        </Typography>
-                        <div style={{ textAlign: 'center' }}>
-                            <Link to='https://www.psychologytoday.com/ca/therapists/new-brunswick?gad_source=1&gclid=EAIaIQobChMIndmD-8CrhgMVo3BHAR3CeQM9EAAYASAAEgJsR_D_BwE'>
-                                <Button sx={{ color: 'black' }}>
-                                    Psychology Today Website
-                                </Button>
-                            </Link>
-                        </div>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={8} my={3}>
-                    <Paper sx={{ padding: '1rem', backgroundColor: '#f3eee8', border: '2px solid black' }}>
-                        <Typography variant='h5' textAlign='center' sx={{ color: "#eb9aa3" }}>
-                            Mental Health America
-                        </Typography>
-                        <div style={{ textAlign: 'center' }}>
-                            <Link to='https://mhanational.org/'>
-                                <Button sx={{ color: 'black' }}>
-                                    MHA Website
-                                </Button>
-                            </Link>
-                        </div>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={8} my={3}>
-                    <Paper sx={{ padding: '1rem', backgroundColor: '#f3eee8', border: '2px solid black' }}>
-                        <Typography variant='h5' textAlign='center' sx={{ color: "#eb9aa3" }}>
-                            Crisis Text Line
-                        </Typography>
-                        <div style={{ textAlign: 'center' }}>
-                            <Link to='https://www.crisistextline.org/'>
-                                <Button sx={{ color: 'black' }}>
-                                    Crisis Text Line Website
-                                </Button>
-                            </Link>
-                        </div>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={8} my={3}>
-                    <Paper sx={{ padding: '1rem', backgroundColor: '#f3eee8', border: '2px solid black' }}>
-                        <Typography variant='h5' textAlign='center' sx={{ color: "#eb9aa3" }}>
-                            Substance Abuse and Mental Health Services Administration
-                        </Typography>
-                        <div style={{ textAlign: 'center' }}>
-                            <Link to='https://www.samhsa.gov/'>
-                                <Button sx={{ color: 'black' }}>
-                                    SAMHSA Website
-                                </Button>
-                            </Link>
-                        </div>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={8} my={3}>
-                    <Paper sx={{ padding: '1rem', backgroundColor: '#f3eee8', border: '2px solid black' }}>
-                        <Typography variant='h5' textAlign='center' sx={{ color: "#eb9aa3" }}>
-                            American Psychological Association
-                        </Typography>
-                        <div style={{ textAlign: 'center' }}>
-                            <Link to='https://www.apa.org/'>
-                                <Button sx={{ color: 'black' }}>
-                                    APA Website
-                                </Button>
-                            </Link>
-                        </div>
-                    </Paper>
-                </Grid>
+                ))}
             </Grid>
         </div>
     )

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "National Alliance on Mental Illness",
+        "url": "https://www.nami.org/",
+        "buttonText": "NAMI Website"
+    },
+    {
+        "name": "National Institute of Mental Health",
+        "url": "https://www.nimh.nih.gov/",
+        "buttonText": "NIMH Website"
+    },
+    {
+        "name": "Psychology Today",
+        "url": "https://www.psychologytoday.com/ca/therapists/new-brunswick?gad_source=1&gclid=EAIaIQobChMIndmD-8CrhgMVo3BHAR3CeQM9EAAYASAAEgJsR_D_BwE",
+        "buttonText": "Psychology Today Website"
+    },
+    {
+        "name": "Mental Health America",
+        "url": "https://mhanational.org/",
+        "buttonText": "MHA Website"
+    },
+    {
+        "name": "Crisis Text Line",
+        "url": "https://www.crisistextline.org/",
+        "buttonText": "Crisis Text Line Website"
+    },
+    {
+        "name": "Substance Abuse and Mental Health Services Administration",
+        "url": "https://www.samhsa.gov/",
+        "buttonText": "SAMHSA Website"
+    },
+    {
+        "name": "American Psychological Association",
+        "url": "https://www.apa.org/",
+        "buttonText": "APA Website"
+    }
+]
