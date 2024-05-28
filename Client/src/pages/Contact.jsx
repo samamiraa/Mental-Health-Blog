@@ -3,8 +3,35 @@ import { Button, Paper } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 export default function Contact() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = (e) => {
+        const templateParams = {
+            from_name: name,
+            user_email: email,
+            reply_to: email,
+            message: message
+        }
+        e.preventDefault();
+        emailjs.send('contact_service', 'contact_form', templateParams, 'r4JDaEgG895zltm4G')
+            .then((response) => {
+                console.log('Email sent successfully:', response);
+            }, (error) => {
+                console.error('Email sending failed:', error);
+            }
+            );
+
+        setName('');
+        setEmail('');
+        setMessage('');
+    }
+
     return (
         <div>
             <Grid container sx={{ marginTop: '8rem' }} justifyContent='center'>
@@ -29,7 +56,9 @@ export default function Contact() {
                                         label="Name"
                                         multiline
                                         maxRows={4}
-                                        sx={{ 
+                                        value={name}
+                                        onChange={(event) => setName(event.target.value)}
+                                        sx={{
                                             '& fieldset': {
                                                 borderColor: '#eb9aa3', // Outline color
                                             },
@@ -45,7 +74,9 @@ export default function Contact() {
                                         label="Email"
                                         placeholder="Placeholder"
                                         multiline
-                                        sx={{ 
+                                        value={email}
+                                        onChange={(event) => setEmail(event.target.value)}
+                                        sx={{
                                             '& fieldset': {
                                                 borderColor: '#eb9aa3', // Outline color
                                             },
@@ -62,7 +93,9 @@ export default function Contact() {
                                         multiline
                                         rows={4}
                                         defaultValue="Type here..."
-                                        sx={{ 
+                                        value={message}
+                                        onChange={(event) => setMessage(event.target.value)}
+                                        sx={{
                                             '& fieldset': {
                                                 borderColor: '#eb9aa3', // Outline color
                                             },
@@ -73,7 +106,7 @@ export default function Contact() {
                                     />
                                 </Grid>
                                 <Grid item>
-                                    <Button variant="outlined" type="submit"  sx={{ color: '#eb9aa3', borderColor: '#eb9aa3' }}>
+                                    <Button variant="outlined" onClick={handleSubmit} type="submit" sx={{ color: '#eb9aa3', borderColor: '#eb9aa3' }}>
                                         Submit
                                     </Button>
                                 </Grid>
