@@ -5,11 +5,36 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
+import Alert from '@mui/material/Alert';
 
 export default function Contact() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [showAlertSubmit, setShowAlertSubmit] = useState(false);
+    const [showAlertForm, setShowAlertForm] = useState(false);
+
+    const handleEmptyField = (value) => {
+        if (!value.trim()) {
+            setShowAlertForm(true);
+        } else {
+            setShowAlertForm(false);
+        }
+    }
+
+    {/** regex for email validation */ }
+    const emailValidation = (email) => {
+        const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegEx.test(email);
+    }
+
+    {/** validates email, if not valid prompts invalid email */ }
+    const handleEmailValidation = (event) => {
+        const emailVal = event.target.value;
+        setEmail(emailVal);
+        setEmailError(!emailValidation(emailVal));
+    }
 
     const handleSubmit = (e) => {
         const templateParams = {
@@ -30,6 +55,8 @@ export default function Contact() {
         setName('');
         setEmail('');
         setMessage('');
+
+        setShowAlertSubmit(true);
     }
 
     return (
@@ -49,6 +76,16 @@ export default function Contact() {
                             noValidate
                             autoComplete="off"
                         >
+                            {showAlertSubmit && (
+                                <Alert variant="outlined" severity="success">
+                                    Submission Received!
+                                </Alert>
+                            )}
+                            {showAlertForm && (
+                                <Alert variant="outlined" severity="info">
+                                    Fields cannot be empty!
+                                </Alert>
+                            )}
                             <Grid container direction="column" spacing={2} alignItems='center'>
                                 <Grid item>
                                     <TextField
@@ -58,6 +95,7 @@ export default function Contact() {
                                         maxRows={4}
                                         value={name}
                                         onChange={(event) => setName(event.target.value)}
+                                        onMouseOut={() => handleEmptyField(name)}
                                         sx={{
                                             '& fieldset': {
                                                 borderColor: '#eb9aa3', // Outline color
@@ -72,10 +110,12 @@ export default function Contact() {
                                     <TextField
                                         id="outlined-textarea"
                                         label="Email"
-                                        placeholder="Placeholder"
                                         multiline
                                         value={email}
-                                        onChange={(event) => setEmail(event.target.value)}
+                                        onChange={handleEmailValidation}
+                                        error={!!emailError}
+                                        helperText={emailError ? 'Invalid Email' : ''}
+                                        onMouseOut={() => handleEmptyField(email)}
                                         sx={{
                                             '& fieldset': {
                                                 borderColor: '#eb9aa3', // Outline color
@@ -95,6 +135,7 @@ export default function Contact() {
                                         defaultValue="Type here..."
                                         value={message}
                                         onChange={(event) => setMessage(event.target.value)}
+                                        onMouseOut={() => handleEmptyField(message)}
                                         sx={{
                                             '& fieldset': {
                                                 borderColor: '#eb9aa3', // Outline color
