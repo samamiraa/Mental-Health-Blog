@@ -5,10 +5,7 @@ dotenv.config();
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mentalhealthblog', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mentalhealthblog');
         console.log('connected to MongoDB');
     } catch (error) {
         console.error('Error connecting to mongoDB:', error);

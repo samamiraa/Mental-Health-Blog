@@ -9,14 +9,14 @@ export default function Home() {
     return (
         <div>
             <Grid container alignItems="center" justifyContent="center">
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12}  display="flex" justifyContent="center">
                     <Avatar
                         alt="Miss Mental Matters logo"
                         src="/mmmlogo.png"
-                        sx={{ width: '75%', height: '75%', marginTop: '3rem', marginLeft: '3rem', border: ' 2px solid black' }}
+                        sx={{ width: '25%', height: '25%', marginTop: '3rem', border: ' 2px solid black' }}
                     />
                 </Grid>
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={6} >
                     <Paper sx={{ backgroundColor: '#f3eee8', border: '2px solid black', margin: '2rem' }}>
                         <Typography variant="h5" textAlign="center" gutterBottom sx={{ color: "#eb9aa3", padding: '1rem' }}>
                             {"Don't believe everything you think"}
